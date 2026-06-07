@@ -1,24 +1,14 @@
 {
   "rewrites": [
     {
-      "source": "/",
+      "source": "/(.*)",
       "has": [
-	{
-		"type": "host",
-		"value": "blog.nkosikhonadlamini.xyz"
-	}
+        {
+          "type": "host",
+          "value": "blog.nkosikhonadlamini.xyz"
+        }
       ],
-      "destination": "blog/index.html"
-    },
-    {
-      "source": "/:path*",
-      "has": [
-	{
-		"type": "host",
-		"value": "blog.nkosikhonadlamini.xyz"
-	}
-      ],
-      "destination": "/blog/:path*"
+      "destination": "/blog/$1"
     }
   ]
 }
