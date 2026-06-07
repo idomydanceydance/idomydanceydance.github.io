@@ -2,12 +2,12 @@
   "rewrites": [
     {
       "source": "/:path*",
-      "has": [
-	{
-		"type": "host",
-		"value": "blog.nkosikhonadlamini.xyz"
-	}
-      ],
+      "has": [{ "type": "host", "value": "blog.nkosikhonadlamini.xyz" }],
+      "destination": "blog/index.html"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "blog.nkosikhonadlamini.xyz" }],
       "destination": "/blog/:path*"
     }
   ]
