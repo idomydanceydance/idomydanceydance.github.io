@@ -1,5 +1,2 @@
-# idomydanceydance.github.io static site
-
-- to _clone_ used **git clone git@github-third:idomydanceydance/idomydanceydance.github.io.git
-
+# The name is Nkosikhona Dlamini, now welcome!
 

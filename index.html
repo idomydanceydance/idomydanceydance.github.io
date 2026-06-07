@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nkosikhona Dlamini</title>
+  <link rel="icon" type="image/png" href="/icons/favicon.png">
+
+  <!-- Shared design tokens, guide lines, toggle, typography -->
+  <link rel="stylesheet" href="/css/theme.css">
+  <!-- Home-page-specific: profile pic, bio, card links, blog teaser -->
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+  <!-- Theme toggle (top-left) — on every page -->
+  <button id="theme-toggle" aria-label="Toggle day/night mode">
+    <img id="theme-icon" src="/icons/moon.svg" alt="Switch to night mode">
+  </button>
+
+  <!-- Profile picture (top-right) — home page only, hidden on mobile via home.css -->
+  <div class="profile-wrap">
+    <img src="/profile/IMG_8335.JPG" alt="Nkosikhona Dlamini" class="profile-pic">
+  </div>
+
+  <!-- Cyan guide lines (desktop only, hidden on mobile via theme.css) -->
+  <div class="guide-line guide-line-left"  aria-hidden="true"></div>
+  <div class="guide-line guide-line-right" aria-hidden="true"></div>
+
+  <main class="content">
+    <h1>Nkosikhona Dlamini</h1>
+    <p class="tagline">Developer &amp; thinker</p>
+    <div class="divider"></div>
+
+    <p class="bio">
+      Welcome to my space on the internet. I build things with code, think
+      in systems, and write about what I find along the way. Based somewhere
+      between the terminal and a good idea.
+    </p>
+
+    <div class="link-group">
+      <a href="/resume/NkosikhonaDlaminiCV-2.pdf" target="_blank" class="card-link">
+        <img src="/icons/pdf-icon.svg" alt="PDF icon">
+        <span>Curriculum Vitae / Resume</span>
+      </a>
+      <a href="https://blog.nkosikhonadlamini.xyz" class="card-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="1.6"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/>
+        </svg>
+        <span>Blog</span>
+      </a>
+    </div>
+
+    <div class="blog-teaser">
+      <h2>From the blog</h2>
+      <p>Thoughts on software, craft, and whatever else demands to be written down.</p>
+      <a href="https://blog.nkosikhonadlamini.xyz" class="btn-outline">Read the blog →</a>
+    </div>
+  </main>
+
+  <footer>© 2026-27 Nkosikhona Dlamini</footer>
+
+  <!-- Shared theme logic — last so DOM is ready -->
+  <script src="/js/theme.js"></script>
+</body>
+</html>
+
