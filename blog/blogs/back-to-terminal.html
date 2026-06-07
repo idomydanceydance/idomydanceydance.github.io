@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why I keep coming back to the terminal — Nkosikhona Dlamini</title>
+  <link rel="icon" type="image/png" href="/icons/favicon.png">
+
+  <!-- Shared design tokens, guide lines, toggle, typography -->
+  <link rel="stylesheet" href="/css/theme.css">
+  <!-- Individual post styles -->
+  <link rel="stylesheet" href="/css/post.css">
+</head>
+<body>
+
+  <!-- Theme toggle (top-left) -->
+  <button id="theme-toggle" aria-label="Toggle day/night mode">
+    <img id="theme-icon" src="/icons/moon.svg" alt="Switch to night mode">
+  </button>
+
+  <!-- Cyan guide lines -->
+  <div class="guide-line guide-line-left"  aria-hidden="true"></div>
+  <div class="guide-line guide-line-right" aria-hidden="true"></div>
+
+  <header class="post-header">
+    <a href="/blog/" class="nav-link">← Back to blog</a>
+    <p class="post-meta">12 Jan 2025 <span class="tag">Dev</span></p>
+    <h1>Why I keep coming back to the terminal</h1>
+    <div class="divider"></div>
+  </header>
+
+  <article class="post-body">
+
+    <p>
+      Most of the tools I reach for most often are old. Not because I'm nostalgic,
+      but because they've had decades to become exactly what they need to be —
+      nothing more, nothing less.
+    </p>
+
+    <p>
+      The terminal is the clearest example of this. It has no loading spinner, no
+      onboarding flow, no dark pattern nudging me toward a premium tier. It just
+      waits. And when I type, it responds.
+    </p>
+
+    <h2>The constraint is the feature</h2>
+
+    <p>
+      GUI tools abstract away decisions. That's their value proposition. But
+      abstraction has a cost: you stop understanding what's actually happening.
+      The terminal refuses to abstract. Every command is a small contract —
+      input goes in, output comes out, and the whole thing is auditable.
+    </p>
+
+    <blockquote>
+      The best tools are the ones that make you better at thinking,
+      not just faster at clicking.
+    </blockquote>
+
+    <p>
+      When something breaks in a GUI, you click around hoping. When something
+      breaks in the terminal, you read the error. One of those habits compounds.
+    </p>
+
+    <h2>Muscle memory as infrastructure</h2>
+
+    <p>
+      There's something else too. After enough time, the commands stop being
+      commands. <code>cd</code>, <code>ls</code>, <code>grep</code>,
+      <code>git log --oneline</code> — these become extensions of thought.
+      The friction between idea and execution drops to nearly zero.
+    </p>
+
+    <p>
+      That's rare. Most software fights you. The terminal, once learned,
+      gets out of the way entirely.
+    </p>
+
+  </article>
+
+  <!-- Post navigation: update hrefs as you add more posts -->
+  <nav class="post-nav">
+    <span></span><!-- no previous post yet -->
+    <a href="/blog/">All posts →</a>
+  </nav>
+
+  <footer>© 2026-27 Nkosikhona Dlamini</footer>
+
+  <script src="/js/theme.js"></script>
+</body>
+</html>

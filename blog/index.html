@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Nkosikhona Dlamini</title>
+  <link rel="icon" type="image/png" href="/icons/favicon.png">
+
+  <!-- Shared design tokens, guide lines, toggle, typography -->
+  <link rel="stylesheet" href="/css/theme.css">
+  <!-- Blog listing styles -->
+  <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+
+  <!-- Theme toggle (top-left) -->
+  <button id="theme-toggle" aria-label="Toggle day/night mode">
+    <img id="theme-icon" src="/icons/moon.svg" alt="Switch to night mode">
+  </button>
+
+  <!-- Cyan guide lines -->
+  <div class="guide-line guide-line-left"  aria-hidden="true"></div>
+  <div class="guide-line guide-line-right" aria-hidden="true"></div>
+
+  <header class="blog-header">
+    <a href="https://nkosikhonadlamini.xyz" class="nav-link">← Home</a>
+    <h1>The Blog</h1>
+    <p class="subtitle">Writing on software, craft, and clear thinking.</p>
+    <div class="divider"></div>
+  </header>
+
+  <main class="posts">
+
+    <!--
+      Add a new <article class="post-card"> for each post you publish.
+      The href should point to blogs/your-post-filename.html
+    -->
+
+    <article class="post-card">
+      <p class="post-meta">12 Jan 2025 <span class="tag">Dev</span></p>
+      <h2><a href="blogs/back-to-terminal.html">
+        Why I keep coming back to the terminal
+      </a></h2>
+      <p class="post-excerpt">
+        Most of the tools I reach for most often are old. Not because I'm nostalgic,
+        but because they've had decades to become exactly what they need to be —
+        nothing more, nothing less.
+      </p>
+      <a href="blogs/back-to-the-terminal.html" class="read-more">Read more →</a>
+    </article>
+
+    <!--
+    <article class="post-card">
+      <p class="post-meta">DATE <span class="tag">TAG</span></p>
+      <h2><a href="blogs/your-post-slug.html">Your Post Title</a></h2>
+      <p class="post-excerpt">Opening lines of your post…</p>
+      <a href="blogs/your-post-slug.html" class="read-more">Read more →</a>
+    </article>
+    -->
+
+  </main>
+
+  <footer>© 2026-27 Nkosikhona Dlamini</footer>
+
+  <script src="/js/theme.js"></script>
+</body>
+</html>
+
