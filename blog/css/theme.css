@@ -1,0 +1,164 @@
+/* =============================================================
+   css/theme.css
+   Shared design tokens and layout primitives.
+   Linked by all HTML pages on both domains (main and sub).
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Karla:wght@300;400;500&display=swap');
+
+/* Design tokens: light (default) */
+:root {
+  --bg:           #ffffff;
+  --text:         #1a1a1a;
+  --subtext:      #555555;
+  --meta:         #888888;
+  --accent:       #00bcd4;
+  --accent-dim:   rgba(0, 188, 212, 0.16);
+  --line-color:   rgba(0, 188, 212, 0.72);
+  --card-bg:      rgba(255, 255, 255, 0.88);
+  --border:       rgba(0, 0, 0, 0.08);
+  --link:         #1a1a1a;
+
+  /* Content column width — guide lines anchor to this */
+  --col-width: 680px;
+  /* Gap between guide line and the content edge */
+  --line-gap: 18px;
+}
+
+/* Design tokens: dark */
+[data-theme="dark"] {
+  --bg:           #0d0d0d;
+  --text:         #f0f0f0;
+  --subtext:      #aaaaaa;
+  --meta:         #666666;
+  --accent:       #00e5ff;
+  --accent-dim:   rgba(0, 229, 255, 0.10);
+  --line-color:   rgba(0, 229, 255, 0.65);
+  --card-bg:      rgba(20, 20, 20, 0.92);
+  --border:       rgba(255, 255, 255, 0.08);
+  --link:         #f0f0f0;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Karla', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Theme toggle button — fixed top-left, present on every page */
+#theme-toggle {
+  position: fixed;
+  top: 14px;
+  left: 18px;
+  z-index: 300;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+#theme-toggle:hover { opacity: 1; }
+#theme-toggle img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* Cyan guide lines — fixed vertically, desktop only */
+/*
+  They sit var(--line-gap) outside the content column edges,
+  40px from top and bottom so as to never touch the viewport edge.
+*/
+.guide-line {
+  position: fixed;
+  top: 40px;
+  bottom: 40px;
+  width: 1.5px;
+  background: var(--line-color);
+  z-index: 10;
+  pointer-events: none;
+  transition: background 0.35s;
+}
+.guide-line-left {
+  left: calc((100vw - var(--col-width)) / 2 - var(--line-gap));
+}
+.guide-line-right {
+  right: calc((100vw - var(--col-width)) / 2 - var(--line-gap));
+}
+
+/* Hide (cyan) guide lines when viewport is too narrow to make sense */
+@media (max-width: 820px) {
+  .guide-line { display: none; }
+}
+
+/* Shared typography helpers */
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text);
+  transition: color 0.35s;
+}
+
+/* Thin cyan divider */
+.divider {
+  width: 52px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.45;
+}
+
+/* Small uppercase nav / back link */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--accent);
+  transition: opacity 0.2s;
+}
+.nav-link:hover { opacity: 0.65; }
+
+/* Outline button */
+.btn-outline {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1.5px solid var(--accent);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.22s, color 0.22s;
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 28px 24px;
+  font-size: 0.76rem;
+  color: var(--subtext);
+  opacity: 0.55;
+}
+

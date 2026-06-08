@@ -1,0 +1,125 @@
+/* =============================================================
+   css/home.css
+   Styles specific to the domains index.html (home page only/ not subdomain).
+   ============================================================= */
+
+/* Profile picture — top-right, home page only, desktop only */
+.profile-wrap {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 300;
+}
+.profile-pic {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--accent);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.15);
+  display: block;
+  transition: border-color 0.35s;
+}
+
+/* Content column */
+.content {
+  max-width: var(--col-width);
+  margin: 0 auto;
+  padding: 90px 24px 110px;
+  text-align: center;
+}
+
+.content h1 {
+  font-weight: 600;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.divider { margin: 0 auto 40px; }
+
+/* Bio */
+.bio {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--subtext);
+  margin-bottom: 52px;
+  transition: color 0.35s;
+}
+
+/* Card links (CV, Blog) */
+.link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+.card-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 26px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--link);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  width: 100%;
+  max-width: 340px;
+  backdrop-filter: blur(4px);
+  transition: border-color 0.22s, background 0.22s, color 0.35s;
+}
+.card-link:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+.card-link img,
+.card-link svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.card-link span { font-weight: 400; }
+
+/* Blog teaser */
+.blog-teaser {
+  margin-top: 60px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+.blog-teaser h2 {
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+.blog-teaser p {
+  font-size: 0.9rem;
+  color: var(--subtext);
+  margin-bottom: 22px;
+  line-height: 1.75;
+}
+
+/* Mobile: no profile pic, left-aligned */
+@media (max-width: 600px) {
+  .profile-wrap   { display: none; }
+  .content        { text-align: left; padding-top: 64px; }
+  .divider        { margin-left: 0; }
+  .link-group     { align-items: flex-start; }
+  .card-link      { max-width: 100%; }
+  .blog-teaser    { text-align: left; }
+  .btn-outline    { display: block; text-align: center; }
+}
+
