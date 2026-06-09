@@ -123,3 +123,19 @@
   .btn-outline    { display: block; text-align: center; }
 }
 
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: var(--text-muted, #666);
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: var(--accent, #00bcd4);
+}
+
