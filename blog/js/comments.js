@@ -95,14 +95,16 @@
 
     try {
       const response = await fetch(`${apiBase}?post=${encodeURIComponent(postSlug)}`);
-      if (!response.ok) throw new Error('Failed to load comments');
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to load comments');
+      }
       const comments = data.comments || [];
       renderComments(comments);
       await cacheSet(cacheKey, comments);
-    } catch {
+    } catch (err) {
       if (!cached) {
-        emptyEl.textContent = 'Comments are unavailable right now. Try again later.';
+        emptyEl.textContent = err.message || 'Comments are unavailable right now. Try again later.';
         emptyEl.hidden = false;
       }
     }
@@ -135,7 +137,7 @@
         body: JSON.stringify(payload),
       });
 
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
 
       if (!response.ok) {
         throw new Error(data.error || 'Could not submit comment.');

@@ -1,12 +1,27 @@
 
 # vercel.json works for dynamic sites it seems and not static ones
 
-## Comments API environment variables (Vercel project settings)
+## Comments storage (required on Vercel)
 
-- LIBSQL_URL — Turso/libSQL database URL for persistent SQLite in production
-- LIBSQL_AUTH_TOKEN — Turso auth token (required with remote libSQL)
-- RESEND_API_KEY — sends verification emails via Resend
-- FROM_EMAIL — verified sender address in Resend (default: comments@nkosikhonadlamini.xyz)
-- SITE_ORIGIN — optional canonical site URL (e.g. https://blog.nkosikhonadlamini.xyz)
+Vercel serverless functions cannot write to local files. Choose one:
 
-Local dev uses file:data/comments.db when LIBSQL_URL is unset.
+### Option A — Vercel Blob (recommended, easiest)
+
+1. Vercel dashboard → your blog project → **Storage** → **Create Database** → **Blob**
+2. Connect the Blob store to the project (this sets `BLOB_READ_WRITE_TOKEN` automatically)
+3. Redeploy
+
+### Option B — Turso (SQLite in the cloud)
+
+- `LIBSQL_URL` — Turso database URL
+- `LIBSQL_AUTH_TOKEN` — Turso auth token
+
+Local dev uses `file:data/comments.db` when neither option above is set.
+
+## Email verification (optional but recommended)
+
+- `RESEND_API_KEY` — sends verification emails via Resend
+- `FROM_EMAIL` — verified sender address in Resend (default: comments@nkosikhonadlamini.xyz)
+- `SITE_ORIGIN` — optional canonical site URL (e.g. https://blog.nkosikhonadlamini.xyz)
+
+Without `RESEND_API_KEY`, comments are saved but verification links are only logged in server logs.

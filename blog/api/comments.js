@@ -84,6 +84,10 @@ export default async function handler(req, res) {
     json(res, 405, { error: 'Method not allowed.' });
   } catch (err) {
     console.error('[comments]', err);
+    if (err.code === 'STORAGE_NOT_CONFIGURED') {
+      json(res, 503, { error: err.message });
+      return;
+    }
     json(res, 500, { error: 'Something went wrong. Please try again.' });
   }
 }
