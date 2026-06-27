@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../css/theme.css">
   <!-- Individual post styles -->
   <link rel="stylesheet" href="../../css/post.css">
+  <link rel="stylesheet" href="../../css/comments.css">
 </head>
 <body>
 
@@ -78,6 +79,32 @@
 
   </article>
 
+  <section id="comments" class="comments" data-post-slug="back-to-terminal">
+    <h2>Comments</h2>
+    <p class="comments-note">
+      Leave a signed comment with your name. We verify your email before publishing —
+      check your inbox after submitting.
+    </p>
+    <p id="comments-empty" class="comments-empty">No comments yet. Be the first.</p>
+    <ul id="comments-list" class="comments-list" aria-live="polite"></ul>
+    <form id="comment-form" class="comment-form">
+      <label>
+        Name
+        <input type="text" name="name" required maxlength="80" autocomplete="name">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required autocomplete="email">
+      </label>
+      <label>
+        Comment
+        <textarea name="body" required maxlength="4000"></textarea>
+      </label>
+      <button type="submit">Post comment</button>
+      <p id="comment-status" class="comment-status" role="status"></p>
+    </form>
+  </section>
+
   <!-- Post navigation: update hrefs as you add more posts -->
   <nav class="post-nav">
     <span></span><!-- no previous post yet -->
@@ -87,5 +114,6 @@
   <footer>© 2026-27 Nkosikhona Dlamini</footer>
 
   <script src="../../js/theme.js"></script>
+  <script src="../../js/comments.js"></script>
 </body>
 </html>

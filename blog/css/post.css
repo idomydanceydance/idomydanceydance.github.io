@@ -38,7 +38,7 @@
 .post-body {
   max-width: var(--col-width);
   margin: 0 auto;
-  padding: 44px 24px 100px;
+  padding: 44px 24px 60px;
 }
 
 .post-body p {

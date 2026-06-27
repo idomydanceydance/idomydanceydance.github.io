@@ -57,7 +57,7 @@
   transition: color 0.35s;
 }
 
-/* Card links (CV, Blog) */
+/* Card links (About, Blog) */
 .link-group {
   display: flex;
   flex-direction: column;
